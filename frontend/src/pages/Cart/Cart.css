@@ -77,6 +77,15 @@ width: 50px;
     color: white;
     border-radius: 4px;
 }
-.cros{
-    cursor: pointer;
+
+@media (max-width:750px) {
+    .cart-bottom{
+        flex-direction: column-reverse;
+    }
+    .cart-promocode{
+        justify-content: start;
+    }
+    .cart-items-item img{
+        margin: 2px;
+        }
 }
