@@ -1,5 +1,6 @@
 import express from "express"
 import cors from "cors"
+import { connectDB } from "./config/db.js";
 
 
 
@@ -10,6 +11,10 @@ const PORT = 4000
 //middleware
 app.use(express.json()); //using this middleawre whenver we will get the request from the frontend to backend that will be passed using this json
 app.use(cors()) //using this we can access the backend  from any frontend 
+
+//db conection
+connectDB();
+
 
 app.get("/", (req,res)=>{
     res.send("all Good")
