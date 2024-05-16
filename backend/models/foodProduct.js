@@ -21,4 +21,9 @@ const foodSchema = new Schema({
         type:String,
         required:true
     }
+
 })
+
+const foodModel = model('foodModel',foodSchema)
+
+export  { foodModel }
