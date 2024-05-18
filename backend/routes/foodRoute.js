@@ -9,15 +9,15 @@ const foodRouter = express.Router(); //using this router we can create the get m
 const storage = multer.diskStorage({
     destination:"uploads",
     filename:(req,file,cb)=>{
-        return cb(null,`$${Date.now()}${file.originalname}`)
+        return cb(null,`${Date.now()}${file.originalname}`)
     }
 })
 
-const upload = multer({storage:storage})
+const upload = multer({storage:storage}) //2nd storage create kiya using the disk storage
 
 foodRouter.post("/add",addFood) //use the post method to send the data on the server
 
-
+//upload middleawre:- using that we can store the image in the upload folder
 
 
 export default foodRouter;
