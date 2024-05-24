@@ -1,5 +1,5 @@
 import express from "express";
-import { addFood, listfood } from "../controller/foodController.js";
+import { addFood, listfood, removefood } from "../controller/foodController.js";
 import multer from "multer"; //using that we will create the image storage system
 
 const foodRouter = express.Router(); //using this router we can create the get method post method and other many
@@ -17,6 +17,7 @@ const upload = multer({storage:storage}) //2nd storage create kiya using the dis
 
 foodRouter.post("/add",upload.single('image'),addFood) //use the post method to send the data on the server
 foodRouter.get('/list',listfood)
+foodRouter.post('/remove',removefood)
 
 //upload middleawre:- using that we can store the image in the upload folder
 
