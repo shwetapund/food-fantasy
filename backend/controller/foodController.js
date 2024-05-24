@@ -2,7 +2,6 @@ import foodModel from "./../models/foodProduct.js"
 import fs from "fs" //using this FS file system that is pre-built in the nodejs
 
 //add food item 
-
 const addFood = async(req,res)=>{
     let image_filename = `${req.file.filename}`;
 
@@ -24,5 +23,16 @@ const addFood = async(req,res)=>{
         })
     }
 }
-export { addFood }
+
+//all food list
+const listfood = async(req,res)=>{
+    try{
+        const foods = await foodModel.find({});
+        res.json({success:true,data:foods })
+    }catch(error){
+        console.log(error);
+        res.json({success:false, message:"Error"})
+    }
+}
+export { addFood, listfood }
 
