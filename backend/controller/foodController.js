@@ -2,8 +2,8 @@ import foodModel from "./../models/foodProduct.js"
 import fs from "fs" //using this FS file system that is pre-built in the nodejs
 
 //add food item 
-const addFood = async(req,res)=>{
-    let image_filename = `${req.file.filename}`;
+const addFood = async (req,res) => {
+    let image_filename = `${req.file.filename}`; //using this we will store the uploaded file name in this variable 
 
     const food = new foodModel({
         name:req.body.name,
@@ -13,7 +13,7 @@ const addFood = async(req,res)=>{
         image:image_filename
     })
     try{
-        await food.save();
+        await food.save(); //using this method this food item will be saved in the database
         res.json({success:true,message:"food added"})
     } catch(error){
         console.log(error)

@@ -4,7 +4,6 @@ import { connectDB } from "./config/db.js";
 import foodRouter from "./routes/foodRoute.js";
 
 
-
 //app connfig
 const app = express();
 const PORT = 4000
@@ -25,8 +24,8 @@ app.get("/", (req,res)=>{
     res.send("all Good")
 }) //get method is a http method using that we can request the data from the server
 
-app.listen(PORT, ()=>{
+app.listen(PORT, ()=>{ 
     console.log(`server is running on http://localhost:${PORT}`);
-})
+})//()=>{} we have to pass on e callback function 
 
 

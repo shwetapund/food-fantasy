@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage:storage}) //2nd storage create kiya using the disk storage
 
-foodRouter.post("/add",upload.single('image'),addFood) //use the post method to send the data on the server
+foodRouter.post("/add",upload.single("image"),addFood) //use the post method to send the data on the server
 foodRouter.get('/list',listfood)
 foodRouter.post('/remove',removefood)
 
