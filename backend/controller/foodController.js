@@ -27,7 +27,7 @@ const addFood = async (req,res) => {
 //all food list
 const listfood = async(req,res)=>{
     try{
-        const foods = await foodModel.find({});
+        const foods = await foodModel.find({}); //using this foodmodel we can fetch all the food items for that we'll add do find and in this method we will sipmly add one empty object in this variable we will get all the data of the food items
         res.json({success:true,data:foods })
     }catch(error){
         console.log(error);
